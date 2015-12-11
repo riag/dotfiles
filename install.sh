@@ -45,7 +45,7 @@ config_vim()
 	fi
 
 	echo "source $HOME/.vimfiles/vimrc.vim" > $HOME/.vimrc
-	local path="$HOME/.vimfiles/vimrc.vim..local"
+	local path="$HOME/.vimfiles/vimrc.vim.local"
 	[ -f "$path" ] || cp "${path}.tpl" "$path"
 
 	make -C "$HOME/.vimfiles/bundle/vimproc.vim"
