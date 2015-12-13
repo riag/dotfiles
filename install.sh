@@ -68,6 +68,7 @@ config_zsh()
 		fi
 
 		sh -c "cd $HOME/autojump; python install.py"
+		check_error_code "install autojump error"
 	fi
 
 	if [ ! -d "$HOME/.oh-my-zsh" ];then
