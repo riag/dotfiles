@@ -26,6 +26,40 @@ export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+
+
+function joo() {
+    	setopt localoptions noautonamedirs
+	local cypath="${1}"
+	if [ -z "${cypath}" ]; then
+		cypath="$(pwd)"
+	fi
+
+	if [ ! -d "$cypath" ];then
+		echo "$cypath is not directory or not exist"
+		return
+	fi
+
+        case ${OSTYPE} in
+            linux*)
+                xdg-open "${cypath}"
+                ;;
+            darwin*)
+                open "${cypath}"
+                ;;
+            cygwin)
+		cypath=$(cygpath -w -a ${cypath})
+		echo "$cypath"
+                #cygstart "" "$cypath"
+		explorer "$cypath"
+                ;;
+            *)
+                echo "Unknown operating system: ${OSTYPE}" 1>&2
+                ;;
+        esac
+}
+
+
 autoload -U compinit && compinit -u
 
 
