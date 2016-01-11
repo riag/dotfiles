@@ -15,8 +15,10 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 # User configuration
-
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# 提供一个方式，可以修改 oh-my-zsh 的配置
+[[ -s $HOME/.zshrc.before ]] && source $HOME/.zshrc.before
 
 source $ZSH/oh-my-zsh.sh
 
@@ -27,6 +29,29 @@ export EDITOR='vim'
 
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 
+function open_foler_path()
+{
+	local os_type_local="${1}"
+	local folder_path="${2}"
+
+        case ${os_type_local} in
+            linux*)
+                xdg-open "${folder_path}"
+                ;;
+            darwin*)
+                open "${folder_path}"
+                ;;
+            cygwin)
+		folder_path=$(cygpath -w -a ${folder_path})
+		echo "$folder_path"
+                #cygstart "" "$folder_path"
+		cygstart explorer "$folder_path"
+                ;;
+            *)
+                echo "Unknown operating system: ${os_type_local}" 1>&2
+                ;;
+        esac
+}
 
 function joo() {
     	setopt localoptions noautonamedirs
@@ -40,23 +65,7 @@ function joo() {
 		return
 	fi
 
-        case ${OSTYPE} in
-            linux*)
-                xdg-open "${cypath}"
-                ;;
-            darwin*)
-                open "${cypath}"
-                ;;
-            cygwin)
-		cypath=$(cygpath -w -a ${cypath})
-		echo "$cypath"
-                #cygstart "" "$cypath"
-		explorer "$cypath"
-                ;;
-            *)
-                echo "Unknown operating system: ${OSTYPE}" 1>&2
-                ;;
-        esac
+	open_foler_path "${OSTYPE}" "$cypath"
 }
 
 
@@ -64,8 +73,3 @@ autoload -U compinit && compinit -u
 
 
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
-
-
-
-
-
