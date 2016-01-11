@@ -22,11 +22,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-export EDITOR='vim'
-
 [[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
 
 function open_foler_path()
@@ -71,5 +66,8 @@ function joo() {
 
 autoload -U compinit && compinit -u
 
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+export EDITOR='vim'
 
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
