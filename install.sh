@@ -113,4 +113,7 @@ if [ "$os_type" = "Cygwin" ];then
 	config_mintty
 fi
 
+./make_gitignore.sh
+check_error_code "make gitignore error"
+
 echo "install ok"
