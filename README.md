@@ -9,11 +9,13 @@
 
 ## 安装
 直接使用 `./install.sh` 来安装
+
 如果只是想生成 gitignore, 使用 `./make_gitignore.sh` 来生成
 
 ### 配置 gitignore
 主要是使用 https://github.com/github/gitignore 来合并预定义的gitignore
- `git/gitignore_list` 和 `git/gitignore_list.local`(可选) 来定义要使用 https://github.com/github/gitignore 的哪些文件
+
+`git/gitignore_list` 和 `git/gitignore_list.local`(可选) 来定义要使用 https://github.com/github/gitignore 的哪些文件
 `git/gitignore` 和 `git/gitignore.local`(可选) 来定义自己的配置
 
 ## 安装 powerline 字体
