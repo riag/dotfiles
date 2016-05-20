@@ -1,0 +1,30 @@
+# 这里定义要使用 https://github.com/github/gitignore 对应的 gitignore
+
+Global/Archives.gitignore
+Global/CVS.gitignore
+Global/Eclipse.gitignore
+Global/Emacs.gitignore
+Global/IPythonNotebook.gitignore
+Global/JetBrains.gitignore
+Global/Linux.gitignore
+Global/OSX.gitignore
+Global/SublimeText.gitignore
+Global/SVN.gitignore
+Global/Tags.gitignore
+Global/TortoiseGit.gitignore
+Global/Vagrant.gitignore
+Global/Vim.gitignore
+Global/VisualStudioCode.gitignore
+Global/Windows.gitignore
+Global/Xcode.gitignore
+
+
+# language
+Android.gitignore
+C.gitignore
+C++.gitignore
+Gradle.gitignore
+Java.gitignore
+Node.gitignore
+Python.gitignore
+VisualStudio.gitignore
