@@ -4,11 +4,11 @@
 
 os_type=`uname -o`
 
-# check git, make, python, ag, gcc
+# check git, make, python, gcc
 check_pro()
 {
 	local pro=""
-	for pro in git make python ag gcc
+	for pro in git make python gcc
 	do
 		local pro_path=`which $pro`
 		if [ -z "$pro_path" ];then
