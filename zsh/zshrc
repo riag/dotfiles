@@ -70,4 +70,7 @@ autoload -U compinit && compinit -u
 export LANG=en_US.UTF-8
 export EDITOR='vim'
 
+PROMPT='╭─%{%f%b%k%}$(build_prompt)
+╰─ '
+
 [[ -s $HOME/.zshrc.local ]] && source $HOME/.zshrc.local
