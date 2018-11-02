@@ -17,6 +17,8 @@ plugins=(git gitfast)
 # User configuration
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+[[ -s /etc/profile ]] && source /etc/profile
+
 # 提供一个方式，可以修改 oh-my-zsh 的配置
 [[ -s $HOME/.zshrc.before ]] && source $HOME/.zshrc.before
 
