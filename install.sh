@@ -65,6 +65,7 @@ config_tmux()
 {
 	echo "start config mtmux"
 
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 	cp -rf tmux/tmux.conf $HOME/.tmux.conf
 	touch $HOME/.tmux.conf.local
 
